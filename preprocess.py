@@ -8,8 +8,8 @@ from IPython.display import HTML
 import matplotlib.pyplot as plt
 from tqdm.notebook import tqdm
 
-image_path = Path('C:/Users/Chris/Desktop/lung_project/imagesTr')
-label_path = Path('C:/Users/Chris/Desktop/lung_project/labelsTr')
+image_path = Path('../imagesTr')
+label_path = Path('../labelsTr')
 
 image_path_list = list(image_path.glob('lung*'))
 # len(image_path_list)
@@ -48,7 +48,7 @@ animation = camera.animate()
 HTML(animation.to_html5_video())
 
 
-save_path = Path('C:/Users/Chris/Desktop/lung_project/preprocessed')
+save_path = Path('../preprocessed')
 
 for subject, image_path in enumerate(tqdm(image_path_list)):
     
