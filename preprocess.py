@@ -8,6 +8,7 @@ from IPython.display import HTML
 import matplotlib.pyplot as plt
 from tqdm.notebook import tqdm
 
+
 image_path = Path('../imagesTr')
 label_path = Path('../labelsTr')
 
