@@ -13,27 +13,22 @@ image_path = Path('../imagesTr')
 label_path = Path('../labelsTr')
 
 image_path_list = list(image_path.glob('lung*'))
-# len(image_path_list)
-
 example_image_path = image_path_list[0]
-# example_image_path
 
 def get_label_path(path):
     words = list(path.parts)
     words[words.index('imagesTr')] = 'labelsTr'
     return Path(*words)
 
-example_label_path = get_label_path(example_image_path)
-# example_label_path
+""" View an example CT scan and label
 
+example_label_path = get_label_path(example_image_path)
 example_image = nib.load(example_image_path)
 example_label = nib.load(example_label_path)
-# nib.aff2axcodes(example_image.affine)
+nib.aff2axcodes(example_image.affine)
 
 example_image = example_image.get_fdata()
 example_label = example_label.get_fdata()
-# example_image.shape, example_label.shape
-
 
 fig = plt.figure()
 camera = Camera(fig)
@@ -46,11 +41,12 @@ for i in range(example_image.shape[-1]):
     camera.snap()
 
 animation = camera.animate()
-HTML(animation.to_html5_video())
+HTML(animation.to_html5_video()) 
+
+"""
 
 
 save_path = Path('../preprocessed')
-
 for subject, image_path in enumerate(tqdm(image_path_list)):
     
     ct_scan = nib.load(image_path).get_fdata()
