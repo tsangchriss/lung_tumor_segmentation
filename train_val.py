@@ -52,7 +52,7 @@ class TumorSegmentation(pl.LightningModule):
     def log_images(self, slice, mask, predict, name):
 
         results = []
-        predict = predict > 0.5 # only want output activations greater than 0.5 
+        predict = predict > 0.5 # only want activations greater than 0.5 
         # (sigmoid function will be used to narrow an output activation between 0 and 1)
 
         fig, axis = plt.subplots(1, 2)
@@ -71,7 +71,6 @@ class TumorSegmentation(pl.LightningModule):
     def configure_optimizers(self):
         return [self.optimizer]
 
-
 model = TumorSegmentation()
 checkpoint = ModelCheckpoint(monitor='Valid Loss', save_top_k=30, mode='min') 
 trainer = pl.Trainer(logger=TensorBoardLogger(save_dir='../logs'), log_every_n_steps=1, 
@@ -79,6 +78,9 @@ trainer = pl.Trainer(logger=TensorBoardLogger(save_dir='../logs'), log_every_n_s
 
 trainer.fit(model, train_loader, val_loader)
 
+""" View epochs, loss plots
 
 %load_ext tensorboard
 %tensorboard --logdir ../logs --host localhost
+
+"""
