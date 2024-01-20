@@ -56,7 +56,10 @@ https://github.com/tsangchriss/lung_tumor_segmentation/assets/137365886/3417fecd
 </div>
 
 
+### Reflection
+This project became the most challening one I've had so far. Before this project, I had a pretty rudementary understanding of Python and engaging with this project made that clear. A lot of my time was spend dedicated to understanding Python and exploring its libraries. I honestly think more time was spent on understanding Python than researching the medical aspects for this project. Nonetheless, I think this endeavor improved my coding abilities, drilling into me the essential principles of Python programming. 
 
+Looking ahead, I want to work with 3D imaging. Although I don't have the GPU or memory capacity, I think that handling more intricate datasets could really help deepen my understanding of segmentation tasks. Also, especially after this project, I'm considering using specialized tools for segmentation like TorchIO.
 
 
 
