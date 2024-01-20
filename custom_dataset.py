@@ -51,6 +51,7 @@ class LungDataset(Dataset):
         return np.expand_dims(slice,0), np.expand_dims(mask,0)  
 
 
+""" View an augmented slice and mask
 augments = iaa.Sequential([
     iaa.Affine(scale=(0.85, 1.15),
                rotate=(-45, 45)),
@@ -70,3 +71,4 @@ for i in range(3):
         axis[i][j].axis('off')
 
 plt.tight_layout()
+"""
