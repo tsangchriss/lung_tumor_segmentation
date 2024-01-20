@@ -14,6 +14,7 @@ The HU values from the data were normalized to a range from -0.33 to 1 to improv
   -  scaling
   -  rotations
   -  elastic transformations (different parts of the image are shifted in different directions by some amount).
-
+- The custom dataset ensures any augmentations applied to a slice are also applied to its mask.
+- 
 ### UNet Model
 - 
